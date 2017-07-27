@@ -25,7 +25,7 @@ export default class Hello extends React.Component{
 	});
 	 
 	}
-	
+	 
 	render(){
 	
 	const hStyle = {
@@ -42,16 +42,17 @@ export default class Hello extends React.Component{
 		top: 0,
 		left: 0
 	}
+	  
 	
-	
-		
+		 
 		if(this.state.started){
 			return <div style={bgStyle}>Placeholder scene</div>;
 		}
 		else{
 			return (<div className="wrapper" style={bgStyle}>
 			<h1 style={hStyle}>Joel's Adventure</h1>
-			<Opening onClick={this.handleClick}/>
+			<Opening onClick={this.handleClick} />
+			<img src={require('../images/joel.jpg')} />
 		</div>);
 		}
 	}

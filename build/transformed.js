@@ -22457,7 +22457,8 @@ class Hello extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 					{ style: hStyle },
 					"Joel's Adventure"
 				),
-				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Opening_js__["a" /* default */], { onClick: this.handleClick })
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Opening_js__["a" /* default */], { onClick: this.handleClick }),
+				__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", { src: "https://static.giantbomb.com/uploads/original/0/3683/1120634-penguin_chick.jpg" })
 			);
 		}
 	}
