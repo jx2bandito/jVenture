@@ -1,45 +1,69 @@
 import React from 'react';
+import Peng from '../images/joel.jpg';
+
+
+const bgStyle = { 
+	backgroundColor: "black",
+	color: "white",
+	width: "100%",
+	height: "100%",
+	position: "absolute",
+	textAlign: "center",
+	top: 0,
+	left: 0
+} 
+const imgStyle = {
+	width: "10vw",
+	height: "10vw",
+	borderRadius: "50%",
+	marginLeft: "-35%"
+}
 
 export default class Opening extends React.Component{
 
 	constructor(props){
 		super(props);
 		this.state = { 
-		title: "BABABBA"
-			};
-			
-	}
-	
-	
+		title: "A Penguin's Might?"
+		};
+	}		
+		
+	componentDidMount(){
+		const rotDeg = 15;
+		const fR = rotDeg + "deg";
+		const bR = -rotDeg + "deg";
+		const pengTL = new TimelineMax({repeat: -1});
+		pengTL
+			.fromTo("img", 2, {
+				rotation: fR,
+				ease: Power0.easeNone
+			}, {
+				rotation: bR,
+				ease: Power0.easeNone
+			})
+			.fromTo("img", 2, {
+				rotation: bR,
+				ease: Power0.easeNone
+			},{
+				rotation: fR,
+				ease: Power0.easeNone
+			});
+	}	
 		
 	render(){
-	
-	const style = {
-		display: "block",
-		textAlign: "center"
-	}
-	const sWidth = 200;
-	const sHeight = 18;
-	const startStyle = {
-		position: "absolute",
-		left: "calc(50% - " + sWidth/2 + "px)",
-		width: sWidth,
-		height: sHeight,
-		top: "calc(50% - " + sHeight/2 + "px)",
-	}
-	
+
 		return (
-		<div>
-		<h2 onClick={this.toggleClick} style={style}>
+		<div className="wrapper" style={bgStyle}>
+			<h1>Joel's Adventure</h1>
+		<h2 onClick={this.toggleClick}>
 			{this.state.title}
 		</h2>
-		
-		<p onClick={this.props.onClick} style={Object.assign({}, style, startStyle)}>
-		Click to Start</p>
-		
-		
-		
-		</div>);
-		}
+		<p onClick={this.props.onClick}>
+			Click to Start
+		</p>
+		<img src={ Peng } style={imgStyle}/>
+			</div>
+		);
+	}
 
 }
