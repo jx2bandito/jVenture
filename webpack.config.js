@@ -17,9 +17,13 @@ module.exports = {
 			test: /\.(js|jpg)$/,
 			exclude: /node_modules/,
 			loader: 'babel-loader'
+		},{
+			test: /\.(png|gif|jpg)$/,
+			exclude: /node_modules/,
+			loader: 'url-loader'
 		}
-]
-},
+		]
+	},
 	output: {
 		filename: 'transformed.js',
 		path: __dirname + '/build'
