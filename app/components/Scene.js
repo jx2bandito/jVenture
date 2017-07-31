@@ -1,6 +1,7 @@
-var React = require('react');
+import React from 'react';
 import transitionTL from './transition.js';
-import Typed from 'react-typist';
+import Dialogue from './dialogue.js';
+
 
 const bgStyle = { 
 	backgroundColor: "black",
@@ -18,6 +19,10 @@ export default class Scene extends React.Component{
 	
 	constructor(props){
 		super(props);
+				
+		this.state = {
+			dialogue: "Hello, I am dialogue"
+		}
 		
 		this.title = "Placeholder Scene1";
 		this.option1 = {
@@ -30,8 +35,7 @@ export default class Scene extends React.Component{
 		this.option2 = {
 			message: "Look for penguin girlfriend",
 			click: () => {
-				this.props.chooseScene(0);
-				return;
+				this.setState({dialogue: "You are not attractive enough"});
 			}
 		};
 		this.option3 = {
@@ -48,7 +52,7 @@ export default class Scene extends React.Component{
 				return;
 			}
 		};
-		
+
 		
 	}
 	
@@ -61,15 +65,15 @@ export default class Scene extends React.Component{
 	
 	render(){
 		return (
-		<Typed>
+		
 			<div style={bgStyle} className="wrapper">
 				<h1>{this.title}</h1>
 				<div onClick={this.option1.click} className="option1">{this.option1.message}</div>
 				<div onClick={this.option2.click} className="option2">{this.option2.message}</div>
 				<div onClick={this.option3.click} className="option3">{this.option3.message}</div>
 				<div onClick={this.option4.click} className="option4">{this.option4.message}</div>
+				<Dialogue dialogue={this.state.dialogue}/>
 			</div>
-		</Typed>
 		);
 	}
 }
