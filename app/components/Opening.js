@@ -10,7 +10,13 @@ const bgStyle = {
 	position: "absolute",
 	textAlign: "center",
 	top: 0,
-	left: 0
+	left: 0,
+	WebkitUserSelect: "none", 
+    KhtmlUserSelect: "none", 
+    MozUserSelect: "none",
+    msUserSelect: "none", 
+    userSelect: "none",
+	cursor: "default" 
 } 
 const imgStyle = {
 	width: "10vw",
@@ -48,21 +54,21 @@ export default class Opening extends React.Component{
 				rotation: fR,
 				ease: Power0.easeNone
 			});
-	}	
+	}
 		
 	render(){
 
 		return (
-		<div className="wrapper" style={bgStyle}>
-			<h1>Joel's Adventure</h1>
-		<h2 onClick={this.toggleClick}>
-			{this.state.title}
-		</h2>
-		<p onClick={this.props.onClick}>
-			Click to Start
-		</p>
-		<img src={ Peng } style={imgStyle}/>
-			</div>
+			<div className="wrapper" style={bgStyle}>
+				<h1>Joel's Adventure</h1>
+			<h2 onClick={this.toggleClick}>
+				{this.state.title}
+			</h2>
+			<p onClick={this.props.onClick}>
+				Click to Start
+			</p>
+			<img src={ Peng } style={imgStyle}/>
+				</div>
 		);
 	}
 
