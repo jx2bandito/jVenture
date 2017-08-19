@@ -4,7 +4,7 @@ import Dialogue from './dialogue.js';
 import imgBg from "../images/sealhabitat.jpg";
 
 const wrapStyle = { 
-	color: "black",
+	color: "white",
 	width: "100%",
 	height: "100%",
 	position: "absolute",
@@ -28,6 +28,7 @@ const msgBox = {
 	bottom: 25,
 	fontSize: "2.5vw",
 	border: "1px solid black",
+	color: "black",
 	borderRadius: "5px",
 	background: "rgba(200, 200, 230, .7)"
 }
@@ -81,7 +82,7 @@ export default class Scene extends React.Component{
 			}
 		};
 		this.option2 = {
-			message: "Explore mysterious ice boulder.",
+			message: "Inspect ice boulder",
 			click: () => {
 				this.setState({
 					dialogue: "A frozen boulder blocks a cave. Perhaps something can melt it.",
@@ -94,12 +95,9 @@ export default class Scene extends React.Component{
 			message: "Club a large seal",
 			click: () => {
 				this.setState({
-					dialogue: this.clubbedBigSeal ? "The large seal stares you down. You back away slowly." : "The large seal beats you down, but at least you tried.`Your Courage went up!",
+					dialogue: this.props.accessCourage("Big Seal") ? "The large seal stares you down. You back away slowly." : "The large seal beats you down, but at least you tried.`Your Courage went up!",
 					showDialogue: true
 				});
-				if(!this.clubbedBigSeal){
-					this.clubbedBigSeal = true;
-				};
 				this.cursorDefault();
 				return;
 			}
@@ -107,8 +105,16 @@ export default class Scene extends React.Component{
 		this.option4 = {
 			message: "Go home",
 			click: () => {
-				let scene = this.hasItem("Guilt") ? 3 : 0;
-				this.props.chooseScene(scene);
+			
+				this.hasItem("Guilt") ? 
+				(
+					this.setState({
+						dialogue: "You take a long, somber walk home.",
+						dialogueClickParam: "Home2",
+						dialogueOnClick: this.props.chooseScene,
+						showDialogue: true
+					})
+				): this.props.chooseScene("Home")
 				return;
 			}
 			

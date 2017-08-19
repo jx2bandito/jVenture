@@ -69,7 +69,7 @@ export default class Scene extends React.Component{
 		this.option1 = {
 			message: "Hunt for food",
 			click: () => {
-				this.props.chooseScene(1);
+				this.props.chooseScene("pExpress");
 				return;
 			}
 		};
@@ -98,7 +98,7 @@ export default class Scene extends React.Component{
 			message: "Go clubbing",
 			click: () => {
 				if(this.props.accessItem().indexOf("Club") > -1){
-					this.props.chooseScene(2);
+					this.props.chooseScene("sHabitat");
 					return;
 				}
 				this.setState({

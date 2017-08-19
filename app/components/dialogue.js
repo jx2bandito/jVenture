@@ -10,6 +10,7 @@ const msgBox = {
 	bottom: 25,
 	fontSize: "2.5vw",
 	border: "1px solid black",
+	color: "black",
 	borderRadius: "5px",
 	textAlign: "center",
 	background: "rgba(200, 200, 230, .7)"

@@ -3,6 +3,8 @@ import transitionTL from './transition.js';
 import Dialogue from './dialogue.js';
 import imgBg from "../images/home.jpg";
 
+import {cipherAudio} from "./dHabitat.js";
+
 const wrapStyle = { 
 	color: "black",
 	width: "100%",
@@ -59,6 +61,7 @@ export default class Scene extends React.Component{
 		this.state = {
 			dialogue: "You return home. Guilt weighs heavy on your conscience.",
 			showDialogue: true,
+			dialogueClickParam: null,
 			cursorStyle: {
 				cursor: "default"
 			}
@@ -70,7 +73,10 @@ export default class Scene extends React.Component{
 		this.option1 = {
 			message: "Hunt for food",
 			click: () => {
-				this.props.chooseScene(1);
+				this.setState({
+					dialogue: "The Creature prowls at night. Best not wander off.",
+					showDialogue: true
+				})
 				return;
 			}
 		};
@@ -89,6 +95,8 @@ export default class Scene extends React.Component{
 			click: () => {
 				this.setState({
 					dialogue: "You toss and turn in your sleep...",
+					dialogueClickParam: "dHabitat",
+					dialogueOnClick: this.props.chooseScene,
 					showDialogue: true
 				});
 				this.cursorDefault();
@@ -99,7 +107,7 @@ export default class Scene extends React.Component{
 			message: "Go clubbing",
 			click: () => {
 				if(this.props.accessItem().indexOf("Club") > -1){
-					this.props.chooseScene(2);
+					this.props.chooseScene("sHabitat");
 					return;
 				}
 				this.setState({
@@ -112,6 +120,7 @@ export default class Scene extends React.Component{
 		};
 		this.hasItem = this.hasItem.bind(this);
 		this.endDialogue = this.endDialogue.bind(this);
+		this.state.dialogueOnClick = this.endDialogue;
 		this.cursorPointer = this.cursorPointer.bind(this);
 		this.cursorDefault = this.cursorDefault.bind(this);
 	}
@@ -139,9 +148,6 @@ export default class Scene extends React.Component{
 	}
 	
 	componentWillMount(){
-		if(this.props.starting){
-			this.state.dialogue = "You wake up. You are a penguin named Joel. What do you do?";
-		}
 		this.delay = 500;
 	}
 	
@@ -161,7 +167,7 @@ export default class Scene extends React.Component{
 				{(
 				()=>{
 					if (this.state.showDialogue){
-						return <Dialogue onClick={this.endDialogue} delay={this.delay}>{this.state.dialogue}</Dialogue>;
+						return <Dialogue onClick={this.state.dialogueOnClick} onClickParam={this.state.dialogueClickParam} delay={this.delay}>{this.state.dialogue}</Dialogue>;
 					}
 					else if (!this.state.showDialogue){
 						return (

@@ -3,6 +3,9 @@ import transitionTL from './transition.js';
 import Dialogue from './dialogue.js';
 import imgBg from "../images/shop.jpg";
 
+
+
+
 const wrapStyle = { 
 	color: "black",
 	width: "100%",
@@ -101,7 +104,7 @@ export default class Scene extends React.Component{
 		this.option4 = {
 			message: "Go home",
 			click: () => {
-				this.props.chooseScene(0);
+				this.props.chooseScene("Home");
 				return;
 			}
 		};
@@ -141,6 +144,9 @@ export default class Scene extends React.Component{
 	
 	componentWillUpdate(){
 		this.delay = 50;
+	}
+	
+	componentWillUnmount(){
 	}
 	
 	render(){
