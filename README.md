@@ -4,7 +4,7 @@
   
   
 ### User stories: <br />
-* Options can update Joel's courage, add items, show dialogue, and/or change scene.
+* Options can update Joel's courage, add items, show dialogue, and/or change current scene.
 * Different BGM plays depending on which scene is currently rendered.
 * BGM does not restart if two scenes share the same music. 
 * Dialogue has a typing effect. Dialogue's initial delay and typing delay can be adjusted (within code). 
