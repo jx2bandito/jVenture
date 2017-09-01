@@ -4,17 +4,17 @@
   
   
 ### User stories: <br />
-* Options can update Joel's courage, add items, show dialogue, and/or change scene.<br />
-* Different BGM plays depending on which scene is currently rendered. <br />
-* BGM does not restart if two scenes share the same music. <br />
-* Dialogue has a typing effect. Dialogue's initial delay and typing delay can be adjusted (within code). <br />
-* Some options have dynamic results based on Joel's courage and items (e.g. "Order Fish Taco" -> "You Obtain Fish Taco!" vs "You already have a Fish Taco.").<br />
-* Dialogue can also be displayed before a scene changes and/or immediately after a new scene renders.<br />
-* A different scene transition is used when rendering a battle scene. <br /><br />
-* GSAP is used for battle animations.
-* Design is reasonably responsive.<br /><br />
+* Options can update Joel's courage, add items, show dialogue, and/or change scene.
+* Different BGM plays depending on which scene is currently rendered.
+* BGM does not restart if two scenes share the same music. 
+* Dialogue has a typing effect. Dialogue's initial delay and typing delay can be adjusted (within code). 
+* Some options have dynamic results based on Joel's courage and items (e.g. "Order Fish Taco" -> "You Obtain Fish Taco!" vs "You already have a Fish Taco.").
+* Dialogue can also be displayed before a scene changes and/or immediately after a new scene renders.
+* A different scene transition is used when rendering a battle scene.
+* GreenSock is used for battle animations.
+* Design is reasonably responsive.
     
 ###  To do: <br />
-* Possibly separate presentational components and container components. <br />
-* Place style objects in different files. <br />
-* Add more scenes. <br />
+* Possibly separate presentational components and container components. 
+* Place style objects in different files. 
+* Add more scenes. 
