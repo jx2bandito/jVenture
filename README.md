@@ -11,6 +11,7 @@
 * Some options have dynamic results based on Joel's courage and items (e.g. "Order Fish Taco" -> "You Obtain Fish Taco!" vs "You already have a Fish Taco.").<br />
 * Dialogue can also be displayed before a scene changes and/or immediately after a new scene renders.<br />
 * A different scene transition is used when rendering a battle scene. <br /><br />
+* GSAP is used for battle animations.
 * Design is reasonably responsive.<br /><br />
     
 ###  To do: <br />
