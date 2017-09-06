@@ -9,7 +9,8 @@ export const quackAttack =  {
 		let attackTL = new TimelineMax({
 			onComplete: function(){
 				scene.setState({
-					dialogue: "You try to attack, but the duck quacks at you, throwing you back.`The Shadow Duck prepares to dive in.",
+					dialogue: "You try to attack, but the duck quacks at you, throwing you back."
+					+"`The Shadow Duck prepares to dive in.",
 					showDialogue: true,
 					battlePattern: diveAttack
 				});
@@ -58,7 +59,8 @@ export const quackAttack =  {
 			let defendTL = new TimelineMax({
 				onComplete: function(){
 					scene.setState({
-						dialogue: "You barely manage to defend against the attack, and you see no opening.`The Shadow Duck readies another Quack Attack.",
+						dialogue: "You barely manage to defend against the attack, and you see no opening."
+						+"`The Shadow Duck readies another Quack Attack.",
 						showDialogue: true
 					});
 				}
