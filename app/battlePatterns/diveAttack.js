@@ -36,7 +36,7 @@ export const diveAttack =  {
 				transform: "rotateY(0deg) rotateZ(-90deg)"
 			}})
 			.to(".joelBattle", .5, {
-				x: "0%",
+				x: "0%", 
 				rotationZ: "0deg",
 				ease: Back.easeInOut,
 				onStart: function(){
