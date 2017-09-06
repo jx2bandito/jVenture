@@ -60,7 +60,7 @@ export default class Scene extends React.Component{
 			dialogue: "You enter the seals' habitat.",
 			showDialogue: true,
 			cursorStyle: {
-				cursor: "defa ult"
+				cursor: "default"
 			}
 		}
 		
