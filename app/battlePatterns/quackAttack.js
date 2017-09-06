@@ -135,5 +135,5 @@ export const quackAttack =  {
 				
 				scene.cursorDefault();
 				return;
-		}
+		} 
 	}
