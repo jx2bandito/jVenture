@@ -190,7 +190,7 @@ export const quackOpen =  {
 					}, "-=.25")
 					.to(".duckBattle", .5, {
 						y: "0%"
-					})
+					}) 
 					.to(".joelBattle", 1, {
 						y: "0%",
 						x: "0%",
