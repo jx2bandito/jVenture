@@ -52,7 +52,7 @@ export default class App extends React.Component{
 			started: false,
 			scene: Scenes[0],
 			firstStart: true,
-			items: ["Club", "Guilt"],
+			items: [],
 			courage: []
 		}
 		
