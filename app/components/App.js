@@ -30,7 +30,7 @@ var Scenes = {
 		scene: sHabitat,
 		music: duckAudio
 	},
-	Home2: {
+	Home2: { 
 		scene: Home2,
 		music: frostAudio
 	},
