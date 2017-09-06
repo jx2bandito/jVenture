@@ -20,7 +20,7 @@
 * Add more scenes. 
 <br />
 
-Requires node and to be ran in a local server for music to work ('npm run build' while in the directory).<br />
+Run with a local server using node.js/npm ('npm run start' while in directory') for music to work. Silent version can be played just by opening build/index.html with a browser.<br />
 
 Music used (in order):<br />
 Cipher 2 by Kevin MacLeod <br />
