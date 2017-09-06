@@ -19,7 +19,7 @@ const wrapStyle = {
 	textAlign: "center",
 	top: 0,
 	left: 0,
-	WebkitUserSelect: "none", 
+	WebkitUserSelect: "none",  
     KhtmlUserSelect: "none", 
     MozUserSelect: "none",
     msUserSelect: "none", 
