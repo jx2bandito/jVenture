@@ -24,7 +24,7 @@ const dialStyle = {
 	margin: "auto 20px",
 	textAlign: "left"
 }
-
+ 
 export default class Dialogue extends React.Component{
 	constructor(props){
 		super(props);
