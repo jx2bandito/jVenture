@@ -18,3 +18,17 @@
 * Possibly separate presentational components and container components. 
 * Place style objects in different files. 
 * Add more scenes. 
+<br />
+
+Requires node and to be ran in a local server for music to work ('npm run build' while in the directory).<br />
+
+Music used (in order):<br />
+Cipher 2 by Kevin MacLeod <br />
+Fluffing a Duck by Kevin MacLeod<br />
+Ghost Processional by Kevin MacLeod<br />
+Movement Proposition by Kevin MacLeod<br />
+Netherworld Shanty by Kevin MacLeod<br />
+
+The background for Penguin Express is taken from Iglu-Dorf ('http://www.iglu-dorf.com/en/galerie/fotogalerie')<br />
+
+All other images/sounds used are public domain with no attribution required.<br />
