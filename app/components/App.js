@@ -5,18 +5,13 @@ import pExpress from "./pExpress.js";
 import sHabitat from "./sHabitat.js";
 import Home2 from "./Home2.js";
 import dHabitat from "./dHabitat.js";
-import dCoast from "./dCoast.js";
-import battle1 from "./battle1.js";
-import Home3 from "./Home3.js";
-
 
 const cipherAudio = new Audio('./app/music/cipher2.mp3');
-const duckAudio = new Audio('./app/music/duck.mp3'); //Used for seal's habitat, not duck battle
-//const frostAudio = new Audio ('./app/music/frost.mp3');
-//const beeAudio = new Audio('./app/music/happybee.mp3');
+const duckAudio = new Audio('./app/music/duck.mp3');
+const frostAudio = new Audio ('./app/music/frost.mp3');
+const beeAudio = new Audio('./app/music/happybee.mp3');
 const shantyAudio = new Audio('./app/music/shanty.mp3');
 const ghostAudio = new Audio('./app/music/ghost.mp3');
-const battleAudio = new Audio('./app/music/movement.mp3');
 
 
 var currentMusic = 0;
@@ -37,23 +32,11 @@ var Scenes = {
 	},
 	Home2: {
 		scene: Home2,
-		music: false
+		music: frostAudio
 	},
 	dHabitat: {
 		scene: dHabitat,
 		music: ghostAudio
-	},
-	dCoast: {
-		scene: dCoast,
-		music: ghostAudio
-	},
-	battle1: {
-		scene: battle1,
-		music: battleAudio
-	},
-	Home3: {
-		scene: Home3,
-		music: shantyAudio
 	}
 }
 
@@ -69,7 +52,7 @@ export default class App extends React.Component{
 			started: false,
 			scene: Scenes[0],
 			firstStart: true,
-			items: [],
+			items: ["Club", "Guilt"],
 			courage: []
 		}
 		
@@ -89,24 +72,25 @@ export default class App extends React.Component{
 	}
 	
 	
+	restartMusic(){
+		this.currentTime = 0;
+		this.play();
+	}
 	
 	playMusic(newMusic){
-
 		if(newMusic == currentMusic){
 			return false;
 		}
 		
-		if(currentMusic || !newMusic){
+		if(currentMusic){
 			currentMusic.pause();
 		}
 		
-		if(newMusic){
-			newMusic.loop = true;
-			newMusic.volume = .2;
-			newMusic.currentTime = 0;
-			newMusic.play();
-			currentMusic = newMusic;
-		}
+		newMusic.loop = true;
+		newMusic.volume = .5;
+		newMusic.currentTime = 0;
+		newMusic.play();
+		currentMusic = newMusic;
 	}
 	
 	startGame(){
@@ -160,7 +144,7 @@ export default class App extends React.Component{
 		}
 		
 		
-		if(this.state.started){	
+		if(this.state.started){
 			let CurrentScene = this.state.scene;
 			return <CurrentScene accessItem={this.accessItem} accessCourage={this.accessCourage} chooseScene={this.chooseScene}/>
 		}
