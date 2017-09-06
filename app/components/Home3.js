@@ -3,7 +3,7 @@ import transitionTL from './transition.js';
 import Dialogue from './dialogue.js';
 import imgBg from "../images/home.jpg";
 
-const wrapStyle = {
+const wrapStyle = { 
 	color: "black",
 	width: "100%",
 	height: "100%",
