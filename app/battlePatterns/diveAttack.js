@@ -149,7 +149,7 @@ export const diveAttack =  {
 				.play(0);
 				
 			scene.cursorDefault();
-			return;
+			return; 
 
 		}
 	}
