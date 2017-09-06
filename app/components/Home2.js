@@ -52,7 +52,7 @@ const imgStyle = {
 	height: "100%",
 	filter: "brightness(.5)"
 }
-
+ 
 
 export default class Scene extends React.Component{
 	
