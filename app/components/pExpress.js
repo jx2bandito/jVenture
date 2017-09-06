@@ -2,7 +2,7 @@ import React from 'react';
 import transitionTL from './transition.js';
 import Dialogue from './dialogue.js';
 import imgBg from "../images/shop.jpg";
-
+ 
 
 
 
