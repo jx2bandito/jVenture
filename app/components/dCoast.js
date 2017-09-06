@@ -4,7 +4,7 @@ import Dialogue from './dialogue.js';
 import imgBg from "../images/dreamcoast.jpg";
 
 
-
+ 
 	
 	
 const wrapStyle = { 
