@@ -59,8 +59,9 @@ export default class Scene extends React.Component{
 		this.state = {
 			dialogue: "You enter the seals' habitat.",
 			showDialogue: true,
+			dialogueClickParam: null,
 			cursorStyle: {
-				cursor: "defa ult"
+				cursor: "default"
 			}
 		}
 		
@@ -84,7 +85,7 @@ export default class Scene extends React.Component{
 			message: "Inspect ice boulder",
 			click: () => {
 				this.setState({
-					dialogue: "A frozen boulder blocks a cave. Perhaps something could melt it.",
+					dialogue: "A frozen boulder blocks a cave. Perhaps something can melt it.",
 					showDialogue: true
 				});
 				this.cursorDefault();
@@ -94,15 +95,14 @@ export default class Scene extends React.Component{
 			message: "Club a large seal",
 			click: () => {
 				this.setState({
-					dialogue: this.props.accessCourage("Big Seal") ? "The large seal stares you down. You back away slowly." 
-						: "The large seal beats you down, but at least you tried.`Your Courage went up!",
+					dialogue: this.props.accessCourage("Big Seal") ? "The large seal stares you down. You back away slowly." : "The large seal beats you down, but at least you tried.`Your Courage went up!",
 					showDialogue: true
 				});
 				this.cursorDefault();
 				return;
 			}
 		};
-		this.option4 = { 
+		this.option4 = {
 			message: "Go home",
 			click: () => {
 			
@@ -110,9 +110,8 @@ export default class Scene extends React.Component{
 				(
 					this.setState({
 						dialogue: "You take a long, somber walk home.",
-						dialogueOnClick: ()=>{
-							this.props.chooseScene("Home2");
-						},
+						dialogueClickParam: "Home2",
+						dialogueOnClick: this.props.chooseScene,
 						showDialogue: true
 					})
 				): this.props.chooseScene("Home")
@@ -171,11 +170,11 @@ export default class Scene extends React.Component{
 				{(
 				()=>{
 					if (this.state.showDialogue){
-						return <Dialogue onClick={this.state.dialogueOnClick} delay={this.delay}>{this.state.dialogue}</Dialogue>;
+						return <Dialogue onClick={this.state.dialogueOnClick} onClickParam={this.state.dialogueClickParam} delay={this.delay}>{this.state.dialogue}</Dialogue>;
 					}
 					else if (!this.state.showDialogue){
 						return (
-						<div style={msgBox} className="msgBox">
+						<div style={msgBox} className={msgBox}>
 							<div style={optionStyle} onClick={this.option1.click} className="option1" onMouseOver={this.cursorPointer} onMouseLeave={this.cursorDefault}>
 								{this.option1.message}
 							</div>

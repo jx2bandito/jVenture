@@ -42,7 +42,7 @@ export default class Dialogue extends React.Component{
 		var dialogue = this.state.dialogue;
 		var splitDialogue = fullDialogue.split("");
 		var i = 0;
-		var delay = 25;
+		var delay = 20;
 		var listIntervals = [];
 		
 		var loopDialogue = () => {
@@ -101,12 +101,12 @@ export default class Dialogue extends React.Component{
 		if(this.state.updating){
 			return false;
 		}
-		this.props.onClick();
+		this.props.onClick(this.props.onClickParam);
 	}
 	
 	render(){
 		return(
-			<div style={msgBox} className="msgBox" onClick={this.handleClick}>
+			<div style={msgBox} onClick={this.handleClick}>
 				<span style={dialStyle}>{this.state.dialogue}</span>
 			</div>
 		);

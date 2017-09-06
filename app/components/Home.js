@@ -65,7 +65,7 @@ export default class Scene extends React.Component{
 		}
 		
 		
-		this.title = "Home";
+		this.title = "Outside Joel's Abode";
 		this.option1 = {
 			message: "Hunt for food",
 			click: () => {
@@ -161,7 +161,7 @@ export default class Scene extends React.Component{
 					}
 					else if (!this.state.showDialogue){
 						return (
-						<div style={msgBox} className="msgBox">
+						<div style={msgBox} className={msgBox}>
 							<div style={optionStyle} onClick={this.option1.click} className="option1" onMouseOver={this.cursorPointer} onMouseLeave={this.cursorDefault}>
 								{this.option1.message}
 							</div>

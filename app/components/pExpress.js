@@ -72,7 +72,7 @@ export default class Scene extends React.Component{
 			message: "Order fish taco",
 			click: () => {
 				this.setState({
-					dialogue: this.hasItem("Fish Taco") ? "You already have a Fish Taco." : "You obtain Fish Taco!",
+					dialogue: this.hasItem("Fish Taco") ? "You already have one." : "You obtain Fish Taco!",
 					showDialogue: true
 				});
 				this.props.accessItem("Fish Taco");
@@ -165,7 +165,7 @@ export default class Scene extends React.Component{
 					}
 					else if (!this.state.showDialogue){
 						return (
-						<div style={msgBox} className="msgBox">
+						<div style={msgBox} className={msgBox}>
 							<div style={optionStyle} onClick={this.option1.click} className="option1" onMouseOver={this.cursorPointer} onMouseLeave={this.cursorDefault}>
 								{this.option1.message}
 							</div>

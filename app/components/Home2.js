@@ -61,13 +61,14 @@ export default class Scene extends React.Component{
 		this.state = {
 			dialogue: "You return home. Guilt weighs heavy on your conscience.",
 			showDialogue: true,
+			dialogueClickParam: null,
 			cursorStyle: {
 				cursor: "default"
 			}
 		}
 		
 		
-		this.title = "Home";
+		this.title = "Outside Joel's Abode";
 		
 		this.option1 = {
 			message: "Hunt for food",
@@ -94,9 +95,8 @@ export default class Scene extends React.Component{
 			click: () => {
 				this.setState({
 					dialogue: "You toss and turn in your sleep...",
-					dialogueOnClick: ()=>{
-						this.props.chooseScene("dHabitat");
-					},
+					dialogueClickParam: "dHabitat",
+					dialogueOnClick: this.props.chooseScene,
 					showDialogue: true
 				});
 				this.cursorDefault();
@@ -167,11 +167,11 @@ export default class Scene extends React.Component{
 				{(
 				()=>{
 					if (this.state.showDialogue){
-						return <Dialogue onClick={this.state.dialogueOnClick} delay={this.delay}>{this.state.dialogue}</Dialogue>;
+						return <Dialogue onClick={this.state.dialogueOnClick} onClickParam={this.state.dialogueClickParam} delay={this.delay}>{this.state.dialogue}</Dialogue>;
 					}
 					else if (!this.state.showDialogue){
 						return (
-						<div style={msgBox} className="msgBox">
+						<div style={msgBox} className={msgBox}>
 							<div style={optionStyle} onClick={this.option1.click} className="option1" onMouseOver={this.cursorPointer} onMouseLeave={this.cursorDefault}>
 								{this.option1.message}
 							</div>

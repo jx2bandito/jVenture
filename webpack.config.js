@@ -14,7 +14,7 @@ module.exports = {
 	module: {
 		loaders:[
 		{
-			test: /\.js$/,
+			test: /\.(js|jpg)$/,
 			exclude: /node_modules/,
 			loader: 'babel-loader'
 		},{
@@ -26,7 +26,7 @@ module.exports = {
 	},
 	output: {
 		filename: 'transformed.js',
-		path: __dirname + "/build"
+		path: __dirname + '/build'
 	},
 	plugins: [HTMLWebPackPluginConfig]
 };

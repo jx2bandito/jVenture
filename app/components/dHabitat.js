@@ -64,11 +64,14 @@ export default class Scene extends React.Component{
 		this.state = {
 			dialogue: "A blood-curdling screech pierces through your head.",
 			showDialogue: true,
+			dialogueClickParam: null,
 			cursorStyle: {
 				cursor: "default"
 			}
 		}
 		
+		this.clubbedSeal = false;
+		this.clubbedBigSeal = false;
 		this.title = "Seals' Habitat?";
 		
 		this.option1 = {
@@ -93,14 +96,13 @@ export default class Scene extends React.Component{
 			}
 		};
 		this.option3 = {
-			message: "Escape to coast",
+			message: "Explore coast",
 			click: () => {
 				this.setState({
 					dialogue: "Your panically waddle toward the coast.",
 					showDialogue: true,
-					dialogueOnClick: ()=>{
-						this.props.chooseScene("dCoast");
-					}
+					dialogueClickParam: "Home2",
+					dialogueOnClick: this.props.chooseScene,
 				});
 				this.cursorDefault();
 				return;
@@ -108,11 +110,16 @@ export default class Scene extends React.Component{
 		};
 		this.option4 = {
 			message: "Go home",
-			click: () => {			
-				this.setState({
-					dialogue: "A large shifting shadow looms over the path.`You decide to find another way out.",
-					showDialogue: true
-				})
+			click: () => {
+			
+				this.hasItem("Guilt") ? 
+				(
+					this.setState({
+						dialogue: "A large shifting shadow looms over the path.`You decide to find another way out.",
+						showDialogue: true
+					})
+				): this.props.chooseScene("Home")
+				return;
 			}
 			
 		};
@@ -176,11 +183,11 @@ export default class Scene extends React.Component{
 				{(
 				()=>{
 					if (this.state.showDialogue){
-						return <Dialogue onClick={this.state.dialogueOnClick} delay={this.delay}>{this.state.dialogue}</Dialogue>;
+						return <Dialogue onClick={this.state.dialogueOnClick} onClickParam={this.state.dialogueClickParam} delay={this.delay}>{this.state.dialogue}</Dialogue>;
 					}
 					else if (!this.state.showDialogue){
 						return (
-						<div style={msgBox} className="msgBox">
+						<div style={msgBox} className={msgBox}>
 							<div style={optionStyle} onClick={this.option1.click} className="option1" onMouseOver={this.cursorPointer} onMouseLeave={this.cursorDefault}>
 								{this.option1.message}
 							</div>
