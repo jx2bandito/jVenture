@@ -10,7 +10,7 @@ export const diveAttack =  {
 				onComplete: function(){
 					scene.setState({
 						dialogue: "You try to attack, but you had yet to regain your composure."
-							+"`The Shadow Duck prepares to dive in.",
+							+"`The Shadow Duck begins concentrating, gathering energy around its beak.",
 						showDialogue: true,
 						battlePattern: quackAttack
 					});
