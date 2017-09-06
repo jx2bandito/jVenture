@@ -9,7 +9,7 @@ import imgBg from "../images/sealhabitat.jpg";
 	
 const wrapStyle = { 
 	color: "white",
-	width: "100%",
+	width: "100%", 
 	height: "100%",
 	position: "absolute",
 	textAlign: "center",
