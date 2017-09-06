@@ -4,7 +4,7 @@ export default function transitionTL(){
 	.fromTo(".wrapper", .25, {
 		autoAlpha: 0,
 		ease: Power0.easeNone
-	},
+	}, 
 	{
 		autoAlpha: 1,
 		ease: Power0.easeNone
