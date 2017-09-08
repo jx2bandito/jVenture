@@ -23293,7 +23293,7 @@ class Opening extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 
 		return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 			'div',
-			{ className: 'wrapper', style: bgStyle },
+			{ className: 'wrapper', style: bgStyle, onClick: this.props.onClick },
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 				'h1',
 				null,
@@ -23301,12 +23301,12 @@ class Opening extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 			),
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 				'h2',
-				{ onClick: this.toggleClick },
+				null,
 				this.state.title
 			),
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 				'p',
-				{ onClick: this.props.onClick },
+				null,
 				'Click to Start'
 			),
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_1__images_joel_jpg___default.a, style: imgStyle })
