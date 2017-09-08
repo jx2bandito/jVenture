@@ -61,15 +61,14 @@ export default class Opening extends React.Component{
 		return (
 			<div className="wrapper" style={bgStyle} onClick={this.props.onClick}>
 				<h1>Joel's Adventure</h1>
-			<h2>
-				{this.state.title}
-			</h2>
-			<p>
-				Click to Start
-			</p>
-			<img src={Peng} style={imgStyle}/>
-				</div>
+				<h2>
+					{this.state.title}
+				</h2>
+				<p>
+					Click to Start
+				</p>
+				<img src={Peng} style={imgStyle}/>
+			</div>
 		);
 	}
-
 }
