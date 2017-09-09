@@ -20,8 +20,6 @@
 * Add more scenes. 
 <br />
 
-Run with a local server using node.js/npm ('npm run start' while in directory') for music to work. Silent version can be played just by opening build/index.html with a browser.<br />
-
 Music used (in order):<br />
 Cipher 2 by Kevin MacLeod <br />
 Fluffing a Duck by Kevin MacLeod<br />
