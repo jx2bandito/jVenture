@@ -10,13 +10,13 @@ import battle1 from "./battle1.js";
 import Home3 from "./Home3.js";
 
 
-const cipherAudio = new Audio('./app/music/cipher2.mp3');
-const duckAudio = new Audio('./app/music/duck.mp3'); //Used for seal's habitat, not duck battle
-//const frostAudio = new Audio ('./app/music/frost.mp3');
-//const beeAudio = new Audio('./app/music/happybee.mp3');
-const shantyAudio = new Audio('./app/music/shanty.mp3');
-const ghostAudio = new Audio('./app/music/ghost.mp3');
-const battleAudio = new Audio('./app/music/movement.mp3');
+const cipherAudio = new Audio('../app/music/cipher2.mp3');
+const duckAudio = new Audio('../app/music/duck.mp3'); //Used for seal's habitat, not duck battle
+//const frostAudio = new Audio ('../app/music/frost.mp3');
+//const beeAudio = new Audio('../app/music/happybee.mp3');
+const shantyAudio = new Audio('../app/music/shanty.mp3');
+const ghostAudio = new Audio('../app/music/ghost.mp3');
+const battleAudio = new Audio('../app/music/movement.mp3');
 
 
 var currentMusic = 0;

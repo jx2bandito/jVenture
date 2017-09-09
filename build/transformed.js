@@ -23078,13 +23078,13 @@ module.exports = ReactDOMInvalidARIAHook;
 
 
 
-const cipherAudio = new Audio('./app/music/cipher2.mp3');
-const duckAudio = new Audio('./app/music/duck.mp3'); //Used for seal's habitat, not duck battle
-//const frostAudio = new Audio ('./app/music/frost.mp3');
-//const beeAudio = new Audio('./app/music/happybee.mp3');
-const shantyAudio = new Audio('./app/music/shanty.mp3');
-const ghostAudio = new Audio('./app/music/ghost.mp3');
-const battleAudio = new Audio('./app/music/movement.mp3');
+const cipherAudio = new Audio('../app/music/cipher2.mp3');
+const duckAudio = new Audio('../app/music/duck.mp3'); //Used for seal's habitat, not duck battle
+//const frostAudio = new Audio ('../app/music/frost.mp3');
+//const beeAudio = new Audio('../app/music/happybee.mp3');
+const shantyAudio = new Audio('../app/music/shanty.mp3');
+const ghostAudio = new Audio('../app/music/ghost.mp3');
+const battleAudio = new Audio('../app/music/movement.mp3');
 
 var currentMusic = 0;
 
@@ -23312,7 +23312,6 @@ class Opening extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: __WEBPACK_IMPORTED_MODULE_1__images_joel_jpg___default.a, style: imgStyle })
 		);
 	}
-
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = Opening;
 
