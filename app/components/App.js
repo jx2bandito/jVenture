@@ -147,6 +147,7 @@ export default class App extends React.Component{
 	}
 	
 	render(){
+	
 		$(document).on("keypress", (e) => {
 			if(e.which == 13){
 				this.startGame();
@@ -156,13 +157,13 @@ export default class App extends React.Component{
 		if(this.state.started && this.state.firstStart){
 			this.state.firstStart = false;
 			this.playMusic(cipherAudio);
-			return <Scenes.Home.scene chooseScene={this.chooseScene} accessItem={this.accessItem}  accessCourage={this.accessCourage} starting="true" />
+			return <Home chooseScene={this.chooseScene} accessItem={this.accessItem}  accessCourage={this.accessCourage} starting="true" />
 		}
 		
 		
 		if(this.state.started){	
 			let CurrentScene = this.state.scene;
-			return <CurrentScene accessItem={this.accessItem} accessCourage={this.accessCourage} chooseScene={this.chooseScene}/>
+			return < accessItem={this.accessItem} accessCourage={this.accessCourage} chooseScene={this.chooseScene}/>
 		}
 		else{
 			return (
