@@ -1,7 +1,7 @@
 import {diveAttack} from "../battlePatterns/diveAttack.js";
 import {quackOpen} from "../battlePatterns/quackOpen.js";
 
-var quackAudio = new Audio('./app/music/quack.mp3');
+var quackAudio = new Audio('../app/music/quack.mp3');
 quackAudio.volume = .1;
 
 export const quackAttack =  {
