@@ -163,7 +163,7 @@ export default class App extends React.Component{
 		
 		if(this.state.started){	
 			let CurrentScene = this.state.scene;
-			return < accessItem={this.accessItem} accessCourage={this.accessCourage} chooseScene={this.chooseScene}/>
+			return <CurrentScene accessItem={this.accessItem} accessCourage={this.accessCourage} chooseScene={this.chooseScene}/>
 		}
 		else{
 			return (

@@ -6727,7 +6727,7 @@ module.exports = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgI
 
 
 
-var quackAudio = new Audio('./app/music/quack.mp3');
+var quackAudio = new Audio('../app/music/quack.mp3');
 quackAudio.volume = .1;
 
 const quackAttack = {
@@ -23202,6 +23202,7 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 	}
 
 	render() {
+
 		$(document).on("keypress", e => {
 			if (e.which == 13) {
 				this.startGame();
@@ -23211,7 +23212,6 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 		if (this.state.started && this.state.firstStart) {
 			this.state.firstStart = false;
 			this.playMusic(cipherAudio);
-			return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Scenes.Home.scene, { chooseScene: this.chooseScene, accessItem: this.accessItem, accessCourage: this.accessCourage, starting: "true" });
 		}
 
 		if (this.state.started) {
@@ -24502,7 +24502,7 @@ const msgBox = {
 
 const barStyle = {
 	position: "absolute",
-	height: "10%",
+	height: "12%",
 	width: "100%",
 	backgroundColor: "black",
 	display: "block"
