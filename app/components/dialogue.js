@@ -1,5 +1,5 @@
 import React from 'react';
-
+import clickIcon from "../images/clickIcon.png";
 
 const msgBox = {
 	position: "absolute",
@@ -25,12 +25,24 @@ const dialStyle = {
 	textAlign: "left"
 }
  
+ const clickIconStyle = {
+	width: "2vw",
+	height: "2vw",
+	position: "absolute",
+	right: "1vw",
+	bottom: "1vw",
+	zIndex: "2"
+ }
+ 
 export default class Dialogue extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
 			dialogue: "",
-			updating: false
+			updating: false,
+			showClick: {
+				visibility: "hidden"
+			}
 		}
 		
 		this.handleClick = this.handleClick.bind(this);
@@ -38,14 +50,15 @@ export default class Dialogue extends React.Component{
 	}
 
 	typeDialogue(fullDialogue){
-	
+		
 		var dialogue = this.state.dialogue;
 		var splitDialogue = fullDialogue.split("");
 		var i = 0;
 		var delay = 25;
 		var listIntervals = [];
 		
-		var loopDialogue = () => {
+		var loopDialogue = () => {	
+			console.log(this.state.showClick);
 			this.state.updating = true;
 			if(i == splitDialogue.length){
 				var x = 0;
@@ -56,10 +69,18 @@ export default class Dialogue extends React.Component{
 					x++;
 				}
 				this.state.updating = false;
+				this.state.showClick = {
+					visibility: "initial"
+				};
+				console.log(this.state.showClick);
 				return false;
 			}
 			else{
 				let currentChar = splitDialogue[i];
+				
+				if(i == splitDialogue.length - 1){
+					this.state.showClick = {visibility: "initial"}
+				}
 				var pauseCondition  = /[\.\?\,\!]/.test(currentChar);
 				if (pauseCondition){
 					clearInterval(loopInterval);
@@ -71,8 +92,6 @@ export default class Dialogue extends React.Component{
 					listIntervals.push(loopInterval);
 					loopInterval = setInterval(loopDialogue, delay);
 				}
-				
-				
 				if(/`/.test(splitDialogue[i+1])){
 					clearInterval(loopInterval);
 					listIntervals.push(loopInterval);
@@ -99,7 +118,7 @@ export default class Dialogue extends React.Component{
 	
 	handleClick(){
 		if(this.state.updating){
-			return false;
+			return;
 		}
 		this.props.onClick();
 	}
@@ -108,6 +127,8 @@ export default class Dialogue extends React.Component{
 		return(
 			<div style={msgBox} className="msgBox" onClick={this.handleClick}>
 				<span style={dialStyle}>{this.state.dialogue}</span>
+				<img src={clickIcon} style={Object.assign({}, clickIconStyle, this.state.showClick)} />
+
 			</div>
 		);
 	}
