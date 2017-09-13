@@ -59,7 +59,7 @@ export default class Scene extends React.Component{
 		console.log(this.props.children);
 		this.state = {
 			dialogue: "You wake up in cold sweat.`Was it all a dream...?`You look around.`"+
-			"`Every one is staying still, as if frozen by time.``To be continued...",
+			"`Everyone is staying still, as if frozen by time.``To be continued...",
 			showDialogue: true,
 			cursorStyle: {
 				cursor: "default"
