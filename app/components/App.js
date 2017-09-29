@@ -139,13 +139,6 @@ export default class App extends React.Component{
 		}
 	}
 	
-	componentWillMount(){
-	}
-	
-	componentDidUpdate(){
-		console.log(this.state.items);
-	}
-	
 	render(){
 	
 		$(document).on("keypress", (e) => {
