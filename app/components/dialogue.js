@@ -1,20 +1,6 @@
 import React from 'react';
 import clickIcon from "../images/clickIcon.png";
-
-const msgBox = {
-	position: "absolute",
-	width: "80vw",
-	height: "7.5vw",
-	padding: "auto",
-	left: "calc(50% - 40vw)",
-	bottom: 25,
-	fontSize: "2.5vw",
-	border: "1px solid black",
-	color: "black",
-	borderRadius: "5px",
-	textAlign: "center",
-	background: "rgba(200, 200, 230, .7)"
-}
+import {msgBox} from "./styles.js";
 
 const dialStyle = {
 	position: "relative",

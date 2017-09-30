@@ -1,7 +1,6 @@
 import React from 'react';
 import Peng from '../images/joel.jpg';
 
-
 const bgStyle = { 
 	backgroundColor: "black",
 	color: "white",

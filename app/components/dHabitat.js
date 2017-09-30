@@ -2,13 +2,10 @@ import React from 'react';
 import transitionTL from './transition.js';
 import Dialogue from './dialogue.js';
 import imgBg from "../images/sealhabitat.jpg";
+import {msgBox, optionStyle, imgStyle} from "./styles.js";
 
-
-
-	
-	
 const wrapStyle = { 
-	color: "white",
+	color: "black",
 	width: "100%", 
 	height: "100%",
 	position: "absolute",
@@ -23,38 +20,6 @@ const wrapStyle = {
 	backgroundColor: "rgba(240, 50, 50, .5)"
 } 
 
-const msgBox = {
-	position: "absolute",
-	width: "80vw",
-	height: "7.5vw",
-	padding: "auto",
-	paddingBottom: "-35px",
-	left: "calc(50% - 40vw)",
-	bottom: 25,
-	fontSize: "2.5vw",
-	border: "1px solid black",
-	color: "black",
-	borderRadius: "5px",
-	background: "rgba(200, 200, 230, .7)"
-}
-
-const optionStyle = {
-	width: '45%',
-	margin: 'auto',
-	overflow: 'auto',
-	display: 'inline-block',
-	position: "relative",
-	top: "calc(25% - 1.25vw)"
-}
-
-const imgStyle = {
-	position: "absolute",
-	left: 0,
-	top: 0,
-	zIndex: -1,
-	width: "100%",
-	height: "100%"
-}
 
 
 export default class Scene extends React.Component{

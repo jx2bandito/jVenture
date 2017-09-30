@@ -4,27 +4,11 @@ import Dialogue from './dialogue.js';
 import imgBg from "../images/volcano.jpg";
 import joelBattle from "../images/joelBattle.png";
 import duckBattle from "../images/duckBattle.png";
-
 import {quackAttack} from "../battlePatterns/quackAttack.js";
-
+import {wrapStyle, msgBox, optionStyle, imgStyle} from "./styles.js";
 
 var quackAudio = new Audio('./app/music/quack.mp3');
 quackAudio.volume = .1;
-	
-const wrapStyle = { 
-	color: "white",
-	width: "100%",
-	height: "100%",
-	position: "absolute",
-	textAlign: "center",
-	top: 0,
-	left: 0,
-	WebkitUserSelect: "none",  
-    KhtmlUserSelect: "none", 
-    MozUserSelect: "none",
-    msUserSelect: "none", 
-    userSelect: "none"
-} 
 
 const battleJoelStyle = {
 	height: "10vw",
@@ -44,46 +28,12 @@ const battleDuckStyle = {
 	transform: "rotateY(180deg)"
 }
 
-const msgBox = {
-	position: "absolute",
-	width: "80vw",
-	height: "7.5vw",
-	padding: "auto",
-	paddingBottom: "-35px",
-	left: "calc(50% - 40vw)",
-	bottom: 25,
-	fontSize: "2.5vw",
-	border: "1px solid black",
-	color: "black",
-	borderRadius: "5px",
-	background: "rgba(200, 200, 230, .7)"
-}
-
 const barStyle = {
 	position: "absolute",
 	height: "12%",
 	width: "100%",
 	backgroundColor: "black",
 	display: "block"
-}
-
-
-const optionStyle = {
-	width: '45%',
-	margin: 'auto',
-	overflow: 'auto',
-	display: 'inline-block',
-	position: "relative",
-	top: "calc(25% - 1.25vw)"
-}
- 
-const imgStyle = {
-	position: "absolute",
-	left: 0,
-	top: 0,
-	zIndex: -1,
-	width: "100%",
-	height: "100%" 
 }
 
 
