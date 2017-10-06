@@ -19,7 +19,6 @@ export default class Scene extends React.Component{
 	
 	constructor(props){
 		super(props);
-		console.log(this.props.children);
 		this.state = {
 			dialogue: "You wake up in cold sweat.`Was it all a dream...?`You look around.`"+
 			"`Everyone is staying still, as if frozen by time.``To be continued...",

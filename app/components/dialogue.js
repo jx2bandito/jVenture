@@ -44,7 +44,6 @@ export default class Dialogue extends React.Component{
 		var listIntervals = [];
 		
 		var loopDialogue = () => {	
-			console.log(this.state.showClick);
 			this.state.updating = true;
 			if(i == splitDialogue.length){
 				var x = 0;
@@ -58,7 +57,6 @@ export default class Dialogue extends React.Component{
 				this.state.showClick = {
 					visibility: "initial"
 				};
-				console.log(this.state.showClick);
 				return false;
 			}
 			else{

@@ -8,7 +8,6 @@ export default class Scene extends React.Component{
 	
 	constructor(props){
 		super(props);
-		console.log(this.props.children);
 		this.state = {
 			dialogue: "You return home.",
 			showDialogue: true,
