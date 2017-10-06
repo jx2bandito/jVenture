@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 var HTMLWebpackPlugin = require('html-webpack-plugin');
 
 var HTMLWebPackPluginConfig = new HTMLWebpackPlugin({
@@ -28,5 +29,29 @@ module.exports = {
 		filename: 'transformed.js',
 		path: __dirname + "/build"
 	},
-	plugins: [HTMLWebPackPluginConfig]
+	plugins: [HTMLWebPackPluginConfig,
+	
+		new webpack.DefinePlugin({
+			'process.env': {
+			NODE_ENV: JSON.stringify('production')
+			}
+		}), 
+		new webpack.optimize.UglifyJsPlugin({
+			compress: {
+			  warnings: false,
+			  screw_ie8: true,
+			  conditionals: true,
+			  unused: true,
+			  comparisons: true,
+			  sequences: true,
+			  dead_code: true,
+			  evaluate: true,
+			  if_return: true,
+			  join_vars: true
+			},
+			output: {
+				comments: false
+			}
+		}),
+	new webpack.HashedModuleIdsPlugin()]
 };
