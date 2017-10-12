@@ -1,7 +1,8 @@
 # Joel's Adventure
 
- &nbsp;&nbsp;&nbsp; Joel's Adventure is a CYOA-type game made with React.js. I had been meaning to make a CYOA and to create a React project, so this project killed two birds with one stone. The story is incomplete, but I feel as though I've already set everything up as far as interactions go. Webpack is used as the bundler. Play it at https://jx2bandito.github.io/joelAdventure/, or watch at https://www.youtube.com/watch?v=vX51ifih7nk.
-  
+ &nbsp;&nbsp;&nbsp; Joel's Adventure is a CYOA-type game made with React.js. I had been meaning to make a CYOA and to create a React project, so this project killed two birds with one stone. The story is incomplete, but I feel as though I've already set everything up as far as interactions go. Webpack is used as the bundler. <br/>
+  <br/>Project page: https://jx2bandito.github.io/joelAdventure/
+  <br/>Video playthrough: https://www.youtube.com/watch?v=vX51ifih7nk
   
 ### User stories: <br />
 * Options can update Joel's courage, add items, show dialogue, and/or change current scene.
